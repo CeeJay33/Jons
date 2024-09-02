@@ -61,7 +61,7 @@ import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 import TextPlugin from 'gsap/TextPlugin'
 
-gsap.registerPlugin(TextPlugin)
+// gsap.registerPlugin(TextPlugin)
 
 const heroText = ref(null)
 
