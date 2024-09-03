@@ -22,9 +22,7 @@ p{
  margin-left: 0;
 }
 
-.hero__header__text {
-  /* white-space: nowrap;  */
-}
+
 
 .child__section{
     max-width: 50%;
@@ -129,7 +127,7 @@ svg{
   }
 
   .award-section{
-    width: 250px;
+    width: 280px;
   }
 
   .child__section{
