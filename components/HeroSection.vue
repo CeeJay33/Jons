@@ -59,13 +59,13 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
-import {TextPlugin} from 'gsap/TextPlugin'
-
-gsap.registerPlugin(TextPlugin)
 
 const heroText = ref(null)
 
-onMounted(() => {
+onMounted(async () => {
+  const { TextPlugin } = await import('gsap/TextPlugin')
+  gsap.registerPlugin(TextPlugin)
+
   const firstText = 'Web Dev'
   const secondText = 'Digital Designs'
 
@@ -110,6 +110,4 @@ onMounted(() => {
       ease: 'none',
     })
 })
-
 </script>
-
