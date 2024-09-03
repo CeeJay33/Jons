@@ -1,8 +1,8 @@
 <template>
   <div class="main__hero__Section flex flex-col sm:flex-row justify-around items-center mt-7 w-full px-4 sm:px-20">
     <div class="child__section flex flex-col  sm:items-start mb-6 sm:mb-0">
-      <div class="award-section gap-2 bg-slate-100  py-2 border rounded w-25">
-        <p class="font-sans font-semibold sm:text-left">🤩 Award-winning digital services</p>
+      <div class="award-section w-50 block bg-slate-50 small rounded-3 px-3 py-2">
+        <p class="font-sans font-semibold ">🤩 Award-winning digital services</p>
       </div>
 
       <div class="hero__header__text mt-4">
