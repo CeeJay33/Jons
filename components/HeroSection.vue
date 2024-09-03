@@ -49,8 +49,8 @@
 
     </div>
     <div class="child__section flex justify-center sm:justify-end">
-      <div class="image__layout mr-5">
-        <img src="~/assets/images/01-CjhQ6Kut.jpg" alt="" class="border rounded" />
+      <div class="image__layout ">
+        <img src="~/assets/images/01-CjhQ6Kut.jpg" alt="" class="border rounded " />
       </div>
     </div>
   </div>
