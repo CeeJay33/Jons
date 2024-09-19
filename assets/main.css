@@ -75,6 +75,15 @@ p{
     color: rgb(79, 78, 78);
 }
 
+.child__section{
+  position: relative;
+}
+
+.trust_container{
+  position: absolute;
+  top: -5%;
+  right: -5%;
+}
 
 
 @keyframes blink-caret {
