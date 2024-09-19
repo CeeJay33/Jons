@@ -132,10 +132,6 @@ body{
   overflow-x: hidden;
 }
 
-.left-section {
-    /* flex: 0 0 35%; */
-    padding-left: 0;
-}
 
 svg{
     display: none;
@@ -190,11 +186,6 @@ svg{
     align-items: flex-start;
 }
 
-.left-section h2 {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #000;
-}
 
 svg{
     display: none;

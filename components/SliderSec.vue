@@ -4,56 +4,59 @@
       <div class="left-section">
         <h2>30+ Brands Designed</h2>
       </div>
-
-      <!-- Right section for images -->
+      
+      <!-- Right marquee section for sliding content -->
       <div class="right-section">
-        <!-- Carousel for screens smaller than 500px -->
-        <!-- <div v-if="isSmallScreen" class="carousel">
-          <div class="carousel-track" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
-            <div class="carousel-slide">
-              <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
-              
-            </div>
-            <div class="carousel-slide">
-              <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
-              
-            </div>
-            <div class="carousel-slide">
-              <img src="~/assets/images/photo_2024-09-19_12-33-54.jpg" alt="Fashion Design 3">
-              
-            </div>
-          </div>
-          <button @click="prevSlide" class="carousel-btn prev">‹</button>
-          <button @click="nextSlide" class="carousel-btn next">›</button>
-        </div> -->
-
-        <!-- Marquee for larger screens -->
-        <div  class="marquee">
+        <div class="marquee">
           <div class="track" ref="track">
             <div class="content">
               <div class="pro">
                 <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
-               
+                <div class="des">
+                  <span><i class="fa fa-eye"></i></span>
+                  <h5>Animation</h5>
+                  <h4>Fashion Designs</h4>
+                </div>
               </div>
               <div class="pro">
                 <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
-               
+                <div class="des">
+                  <span><i class="fa fa-eye"></i></span>
+                  <h5>Animation</h5>
+                  <h4>Fashion Designs</h4>
+                </div>
               </div>
               <div class="pro">
                 <img src="~/assets/images/photo_2024-09-19_12-33-54.jpg" alt="Fashion Design 3">
-               
+                <div class="des">
+                  <span><i class="fa fa-eye"></i></span>
+                  <h5>Animation</h5>
+                  <h4>Fashion Designs</h4>
+                </div>
               </div>
               <div class="pro">
                 <img src="~/assets/images/photo_2024-09-19_12-34-42.jpg" alt="Fashion Design 4">
-               
-              </div>
-               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_12-33-54.jpg" alt="Fashion Design 3">
-               
+                <div class="des">
+                  <span><i class="fa fa-eye"></i></span>
+                  <h5>Animation</h5>
+                  <h4>Fashion Designs</h4>
+                </div>
               </div>
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_12-34-42.jpg" alt="Fashion Design 4">
-               
+                <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
+                <div class="des">
+                  <span><i class="fa fa-eye"></i></span>
+                  <h5>Animation</h5>
+                  <h4>Fashion Designs</h4>
+                </div>
+              </div>
+              <div class="pro">
+                <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
+                <div class="des">
+                  <span><i class="fa fa-eye"></i></span>
+                  <h5>Animation</h5>
+                  <h4>Fashion Designs</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -65,51 +68,39 @@
 
 <script>
 export default {
+  name: "TopDesigners",
   data() {
-    return {
-      currentIndex: 0,
-    };
+    return {};
   },
-  computed: {
-    isSmallScreen() {
-      return window.innerWidth <= 500;
-    },
+  beforeUnmount() {
+    this.stopAnimation();
   },
   mounted() {
-    window.addEventListener('resize', this.updateScreenSize);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.updateScreenSize);
+    this.startAnimation();
   },
   methods: {
-    updateScreenSize() {
-      this.$forceUpdate();
+    startAnimation() {
+      const track = this.$refs.track;
+      const content = track.querySelector(".content");
+      const trackWidth = track.clientWidth;
+      const contentWidth = content.scrollWidth;
+      const duration = (contentWidth / trackWidth) * 30; // Adjust duration for smoother animation
+      content.style.animation = `marquee ${duration}s linear infinite`;
     },
-    nextSlide() {
-      const totalSlides = 3;
-      this.currentIndex = (this.currentIndex + 1) % totalSlides;
-    },
-    prevSlide() {
-      const totalSlides = 3;
-      this.currentIndex = (this.currentIndex - 1 + totalSlides) % totalSlides;
+    stopAnimation() {
+      const content = this.$refs.track.querySelector(".content");
+      content.style.animation = "none";
     },
   },
-  startAnimation() {
-    const track = this.$refs.track;
-    const content = track.querySelector(".content");
-    const trackWidth = track.clientWidth;
-    const contentWidth = content.scrollWidth;
-    const duration = (contentWidth / trackWidth) * 100;
-    content.style.animation = `marquee ${duration}s linear infinite`;
-  },
-  stopAnimation() {
-    const content = this.$refs.track.querySelector(".content");
-    content.style.animation = "none";
-  }
 };
 </script>
 
 <style>
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 .designers__section {
   margin-top: 5rem;
   display: flex;
@@ -124,11 +115,11 @@ export default {
   justify-content: space-between;
   width: 100%;
 }
-/* 
+
 .left-section {
   flex: 0 0 35%;
   padding-left: 5rem;
-} */
+}
 
 .left-section h2 {
   font-size: 2rem;
@@ -142,151 +133,112 @@ export default {
 }
 
 .marquee {
-  max-width: 100%;
-  overflow-x: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 .track {
-  animation: marquee 30s linear infinite;
+  display: flex;
+  align-items: center;
 }
 
 .content {
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex: 1;
 }
 
-
- .pro{
-  width: 30%;
-  max-width: 30%;
+.pro {
+  width: 150px; /* Adjusted for mobile responsiveness */
   border: 1px solid #7509e1;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
-  margin: 15px 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 0.5rem;
   transition: 0.2s ease;
   background-color: #fff;
   position: relative;
 }
 
- .pro:hover{
-  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+.pro:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid #7509e1;
 }
 
- .pro img{
-  width: 250px;
-  max-width: 250px;
-  height: 250px;
+.pro img {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
-.pro video{
-  width: 250px;
-  max-width: 250px;
-  height: 250px;
-  border-radius: 10px;
-  border: 1px solid #edf4ee;
-  object-fit: cover;
-}
-
- .pro .des{
+.pro .des {
   text-align: start;
   position: absolute;
   bottom: 0;
   color: #fff;
   display: none;
-  padding: 20px 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 10px 10px;
+  width: 100%;
 }
 
- .pro .des span{
+.pro:hover .des {
+  display: block;
+}
+
+.pro .des span {
   color: #ffffff;
   font-size: 13px;
-  font-family: "Open Sans", sans-serif;
 }
 
- .pro .des h5{
+.pro .des h5 {
   padding-top: 7px;
   color: #ffffff;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
 }
 
- .pro .des i{
+.pro .des i {
   font-size: 12px;
   color: #5161ce;
 }
 
- .pro .des h4{
+.pro .des h4 {
   padding-top: 7px;
   font-size: 13px;
   font-weight: 700;
   color: #000;
-  font-family: "Open Sans", sans-serif;
-  opacity: 0.5;
-}
-
-
-
-.pro .cart:hover{
-  background-color: #5161ce;
-}
-
-.carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  box-sizing: border-box;
-}
-
-.carousel-slide img {
-  width: 150px;
-  height: 250px;
-  border-radius: 10px;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.carousel-btn.prev {
-  left: 10px;
-}
-
-.carousel-btn.next {
-  right: 10px;
-}
-
-/* Keyframes for marquee animation */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  opacity: 0.8;
 }
 
 @media (max-width: 500px) {
-  /* Adjust styles for small screens */
-  .carousel-slide img {
-    width: 100%;
+  *{
+  overflow-x: hidden;
+}
+  .left-section {
+    padding-left: 1rem;
+  }
+
+  .left-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .pro {
+    width: 100px;
+  }
+
+  .pro .des {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .pro .des h5 {
+    font-size: 12px;
+  }
+
+  .pro .des h4 {
+    font-size: 11px;
   }
 }
-
 </style>
