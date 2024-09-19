@@ -4,68 +4,57 @@
       <div class="left-section">
         <h2>30+ Brands Designed</h2>
       </div>
-      
-      <!-- Right marquee section for sliding content -->
+
+      <!-- Right section for images -->
       <div class="right-section">
-        <div class="marquee">
+        <!-- Carousel for screens smaller than 500px -->
+        <div v-if="isSmallScreen" class="carousel">
+          <div class="carousel-track" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
+            <div class="carousel-slide">
+              <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
+              
+            </div>
+            <div class="carousel-slide">
+              <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
+              
+            </div>
+            <div class="carousel-slide">
+              <img src="~/assets/images/photo_2024-09-19_12-33-54.jpg" alt="Fashion Design 3">
+              
+            </div>
+          </div>
+          <button @click="prevSlide" class="carousel-btn prev">‹</button>
+          <button @click="nextSlide" class="carousel-btn next">›</button>
+        </div>
+
+        <!-- Marquee for larger screens -->
+        <div v-else class="marquee">
           <div class="track" ref="track">
             <div class="content">
-  
-          <div class="pro">
-              <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="">
-           
-            <div class="des">
-              <span><i class="fa fa-eye"></i></span>
-              <h5>animation</h5>
-              <h4>Fashion Designs</h4>
-            </div>
-          </div>
-          <div class="pro">
-              <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="">
-           
-            <div class="des">
-              <span><i class="fa fa-eye"></i></span>
-              <h5>animation</h5>
-              <h4>Fashion Designs</h4>
-            </div>
-          </div>
-          <div class="pro">
-              <img src="~/assets/images/photo_2024-09-19_12-33-54.jpg" alt="">
-           
-            <div class="des">
-              <span><i class="fa fa-eye"></i></span>
-              <h5>animation</h5>
-              <h4>Fashion Designs</h4>
-            </div>
-          </div>
-          <div class="pro">
-              <img src="~/assets/images/photo_2024-09-19_12-34-42.jpg" alt="">
-           
-            <div class="des">
-              <span><i class="fa fa-eye"></i></span>
-              <h5>animation</h5>
-              <h4>Fashion Designs</h4>
-            </div>
-          </div>
-          <div class="pro">
-              <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="">
-           
-            <div class="des">
-              <span><i class="fa fa-eye"></i></span>
-              <h5>animation</h5>
-              <h4>Fashion Designs</h4>
-            </div>
-          </div>
-
-           <div class="pro">
-              <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="">
-           
-            <div class="des">
-              <span><i class="fa fa-eye"></i></span>
-              <h5>animation</h5>
-              <h4>Fashion Designs</h4>
-            </div>
-          </div>
+              <div class="pro">
+                <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
+               
+              </div>
+              <div class="pro">
+                <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
+               
+              </div>
+              <div class="pro">
+                <img src="~/assets/images/photo_2024-09-19_12-33-54.jpg" alt="Fashion Design 3">
+               
+              </div>
+              <div class="pro">
+                <img src="~/assets/images/photo_2024-09-19_12-34-42.jpg" alt="Fashion Design 4">
+               
+              </div>
+               <div class="pro">
+                <img src="~/assets/images/photo_2024-09-19_12-33-54.jpg" alt="Fashion Design 3">
+               
+              </div>
+              <div class="pro">
+                <img src="~/assets/images/photo_2024-09-19_12-34-42.jpg" alt="Fashion Design 4">
+               
+              </div>
             </div>
           </div>
         </div>
@@ -74,57 +63,53 @@
   </div>
 </template>
 
-
-
 <script>
-// import axios from 'axios';
-
 export default {
-  name: "TopDesigners",
   data() {
     return {
-    }
-  },
-  
-  beforeUnmounted() {
-    this.stopAnimation();
+      currentIndex: 0,
+    };
   },
   computed: {
-    // duplicatedDesigners() {
-    //   return [...this.designers, ];
-    // }
+    isSmallScreen() {
+      return window.innerWidth <= 500;
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.updateScreenSize);
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.updateScreenSize);
   },
   methods: {
-   
-    startAnimation() {
-      const track = this.$refs.track;
-      const content = track.querySelector(".content");
-      const trackWidth = track.clientWidth;
-      const contentWidth = content.scrollWidth;
-      const duration = (contentWidth / trackWidth) * 100; 
-      content.style.animation = `marquee ${duration}s linear infinite`;
+    updateScreenSize() {
+      this.$forceUpdate();
     },
-    stopAnimation() {
-      const content = this.$refs.track.querySelector(".content");
-      content.style.animation = "none";
+    nextSlide() {
+      const totalSlides = 3;
+      this.currentIndex = (this.currentIndex + 1) % totalSlides;
     },
-
-
-   
+    prevSlide() {
+      const totalSlides = 3;
+      this.currentIndex = (this.currentIndex - 1 + totalSlides) % totalSlides;
+    },
+  },
+  startAnimation() {
+    const track = this.$refs.track;
+    const content = track.querySelector(".content");
+    const trackWidth = track.clientWidth;
+    const contentWidth = content.scrollWidth;
+    const duration = (contentWidth / trackWidth) * 100;
+    content.style.animation = `marquee ${duration}s linear infinite`;
+  },
+  stopAnimation() {
+    const content = this.$refs.track.querySelector(".content");
+    content.style.animation = "none";
   }
 };
 </script>
 
 <style>
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-body{
-  overflow-x: hidden;
-}
-
 .designers__section {
   margin-top: 5rem;
   display: flex;
@@ -139,12 +124,11 @@ body{
   justify-content: space-between;
   width: 100%;
 }
-
+/* 
 .left-section {
   flex: 0 0 35%;
   padding-left: 5rem;
-  position: relative;
-}
+} */
 
 .left-section h2 {
   font-size: 2rem;
@@ -166,31 +150,12 @@ body{
   animation: marquee 30s linear infinite;
 }
 
-.content{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.content .first__content{
-    width: 250px;
-    height: 250px;
-    background-color: #ccc;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-
-.pro-container{
+.content {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 3rem 0;
+  gap: 1rem;
+  align-items: center;
 }
+
 
  .pro{
   width: 30%;
@@ -294,5 +259,60 @@ font-weight: 500;
   background-color: #5161ce;
 }
 
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-slide img {
+  width: 150px;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Keyframes for marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 500px) {
+  /* Adjust styles for small screens */
+  .carousel-slide img {
+    width: 100%;
+  }
+}
 
 </style>
