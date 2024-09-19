@@ -84,7 +84,7 @@ export default {
       const content = track.querySelector(".content");
       const trackWidth = track.clientWidth;
       const contentWidth = content.scrollWidth;
-      const duration = (contentWidth / trackWidth) * 30; // Adjust duration for smoother animation
+      const duration = (contentWidth / trackWidth) * 10; // Adjust duration for smoother animation
       content.style.animation = `marquee ${duration}s linear infinite`;
     },
     stopAnimation() {
