@@ -8,7 +8,7 @@
       <!-- Right section for images -->
       <div class="right-section">
         <!-- Carousel for screens smaller than 500px -->
-        <div v-if="isSmallScreen" class="carousel">
+        <!-- <div v-if="isSmallScreen" class="carousel">
           <div class="carousel-track" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
             <div class="carousel-slide">
               <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
@@ -25,10 +25,10 @@
           </div>
           <button @click="prevSlide" class="carousel-btn prev">‹</button>
           <button @click="nextSlide" class="carousel-btn next">›</button>
-        </div>
+        </div> -->
 
         <!-- Marquee for larger screens -->
-        <div v-else class="marquee">
+        <div  class="marquee">
           <div class="track" ref="track">
             <div class="content">
               <div class="pro">
