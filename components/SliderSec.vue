@@ -227,33 +227,7 @@ export default {
   opacity: 0.5;
 }
 
-/* .top{
-margin-top: 50px;
-}
 
-.top h2{
-color: #000;
-font-size: 35px;
-font-family: arial;
-text-align: left;
-padding-left: 7rem;
-font-weight: 500;
-} */
-
- .pro .cart{
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50px;
-  background: #5161ce;
-  color: #ccc;
-  border: 1px solid #cce7d0;
-  position: absolute;
-  bottom: 20px;
-  right: 10px;
-  cursor: pointer;
-  opacity: 1;
-}
 
 .pro .cart:hover{
   background-color: #5161ce;
