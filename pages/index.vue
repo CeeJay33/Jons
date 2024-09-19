@@ -3,6 +3,6 @@
  <NavBar />
  <HeroSection/>
  <SliderSec/>
- <DragWhats/>
+ <!-- <DragWhats/> -->
   </div>
 </template>
