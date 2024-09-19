@@ -61,6 +61,7 @@ p{
 
 .image__layout img{
     max-width: 500px;
+    /* height: 600px; */
     margin-right: 1rem;
 }
 
@@ -81,8 +82,9 @@ p{
 
 .trust_container{
   position: absolute;
-  top: -5%;
-  right: -5%;
+  bottom: 0;
+  left: -15%;
+ 
 }
 
 
@@ -112,6 +114,20 @@ p{
     margin-left: 0.5rem;
 }
 
+.trust_container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 svg{
     display: none;
     color: #b6b6b6;
@@ -135,6 +151,20 @@ svg{
     margin: 0;
     padding: 0;
   }
+
+  .trust_container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 
   .award-section{
     width: 280px;

@@ -1,11 +1,18 @@
 <template>
   <div class="designers__section">
-    <!-- <h2>#Top Rated Designers</h2> -->
-    <div class="marquee">
-      <div class="track" ref="track">
-        <div class="content">
+    <div class="content-wrapper">
+      <div class="left-section">
+        <h2>30+ Brands Designed</h2>
+      </div>
+      
+      <!-- Right marquee section for sliding content -->
+      <div class="right-section">
+        <div class="marquee">
+          <div class="track" ref="track">
+            <div class="content">
+  
           <div class="pro">
-              <img src="~/assets/images/logaster-2020-07-8-cool-aid-1024x793.jpg" alt="">
+              <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="">
            
             <div class="des">
               <span><i class="fa fa-eye"></i></span>
@@ -13,8 +20,8 @@
               <h4>Fashion Designs</h4>
             </div>
           </div>
-           <div class="pro">
-              <img src="~/assets/images/logaster-2020-07-8-cool-aid-1024x793.jpg" alt="">
+          <div class="pro">
+              <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="">
            
             <div class="des">
               <span><i class="fa fa-eye"></i></span>
@@ -22,8 +29,8 @@
               <h4>Fashion Designs</h4>
             </div>
           </div>
-           <div class="pro">
-              <img src="~/assets/images/logaster-2020-07-8-cool-aid-1024x793.jpg" alt="">
+          <div class="pro">
+              <img src="~/assets/images/photo_2024-09-19_12-33-54.jpg" alt="">
            
             <div class="des">
               <span><i class="fa fa-eye"></i></span>
@@ -31,8 +38,8 @@
               <h4>Fashion Designs</h4>
             </div>
           </div>
-           <div class="pro">
-              <img src="~/assets/images/logaster-2020-07-8-cool-aid-1024x793.jpg" alt="">
+          <div class="pro">
+              <img src="~/assets/images/photo_2024-09-19_12-34-42.jpg" alt="">
            
             <div class="des">
               <span><i class="fa fa-eye"></i></span>
@@ -40,8 +47,8 @@
               <h4>Fashion Designs</h4>
             </div>
           </div>
-           <div class="pro">
-              <img src="~/assets/images/logaster-2020-07-8-cool-aid-1024x793.jpg" alt="">
+          <div class="pro">
+              <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="">
            
             <div class="des">
               <span><i class="fa fa-eye"></i></span>
@@ -49,8 +56,9 @@
               <h4>Fashion Designs</h4>
             </div>
           </div>
+
            <div class="pro">
-              <img src="~/assets/images/logaster-2020-07-8-cool-aid-1024x793.jpg" alt="">
+              <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="">
            
             <div class="des">
               <span><i class="fa fa-eye"></i></span>
@@ -58,31 +66,6 @@
               <h4>Fashion Designs</h4>
             </div>
           </div>
-           <div class="pro">
-              <img src="~/assets/images/logaster-2020-07-8-cool-aid-1024x793.jpg" alt="">
-           
-            <div class="des">
-              <span><i class="fa fa-eye"></i></span>
-              <h5>animation</h5>
-              <h4>Fashion Designs</h4>
-            </div>
-          </div>
-           <div class="pro">
-              <img src="~/assets/images/logaster-2020-07-8-cool-aid-1024x793.jpg" alt="">
-           
-            <div class="des">
-              <span><i class="fa fa-eye"></i></span>
-              <h5>animation</h5>
-              <h4>Fashion Designs</h4>
-            </div>
-          </div>
-           <div class="pro">
-              <img src="~/assets/images/logaster-2020-07-8-cool-aid-1024x793.jpg" alt="">
-           
-            <div class="des">
-              <span><i class="fa fa-eye"></i></span>
-              <h5>animation</h5>
-              <h4>Fashion Designs</h4>
             </div>
           </div>
         </div>
@@ -90,6 +73,8 @@
     </div>
   </div>
 </template>
+
+
 
 <script>
 // import axios from 'axios';
@@ -116,7 +101,7 @@ export default {
       const content = track.querySelector(".content");
       const trackWidth = track.clientWidth;
       const contentWidth = content.scrollWidth;
-      const duration = (contentWidth / trackWidth) * 7; 
+      const duration = (contentWidth / trackWidth) * 100; 
       content.style.animation = `marquee ${duration}s linear infinite`;
     },
     stopAnimation() {
@@ -136,18 +121,41 @@ export default {
   100% { transform: translateX(-100%); }
 }
 
-.designers__section{
-    margin-top: 5rem
+body{
+  overflow-x: hidden;
 }
 
-.designers__section h2{
-  font-size: 30px;
-  font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    margin-top: 3rem;
-    padding: 2rem 4rem;
+.designers__section {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-section {
+  flex: 0 0 35%;
+  padding-left: 5rem;
+  position: relative;
+}
+
+.left-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.right-section {
+  flex: 0 0 65%;
+  overflow: hidden;
+}
 
 .marquee {
   max-width: 100%;
@@ -160,6 +168,7 @@ export default {
 
 .content{
     display: flex;
+    gap: 1rem;
     align-items: center;
     justify-content: space-between;
 }
@@ -184,13 +193,10 @@ export default {
 }
 
  .pro{
-  width: 20%;
-  max-width: 20%;
-  padding-left: 12px;
-   padding-right: 12px;
-    padding-top: 11px;
-    border: 1px solid #7509e1;
-  border-radius: 20px;
+  width: 30%;
+  max-width: 30%;
+  border: 1px solid #7509e1;
+  border-radius: 10px;
   cursor: pointer;
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
   margin: 15px 0.5rem;
@@ -208,32 +214,36 @@ export default {
   width: 250px;
   max-width: 250px;
   height: 250px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .pro video{
   width: 250px;
   max-width: 250px;
   height: 250px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid #edf4ee;
   object-fit: cover;
 }
 
  .pro .des{
   text-align: start;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  display: none;
   padding: 20px 0;
 }
 
  .pro .des span{
-  color: #606063;
+  color: #ffffff;
   font-size: 13px;
   font-family: "Open Sans", sans-serif;
 }
 
  .pro .des h5{
   padding-top: 7px;
-  color: #1a1a1a;
+  color: #ffffff;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
 }
@@ -283,7 +293,6 @@ font-weight: 500;
 .pro .cart:hover{
   background-color: #5161ce;
 }
-
 
 
 </style>
