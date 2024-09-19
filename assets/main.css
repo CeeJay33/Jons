@@ -87,6 +87,10 @@ p{
  
 }
 
+.stickk{
+  position: absolute; left: -15%; top: -5%;
+}
+
 
 @keyframes blink-caret {
   from, to {
@@ -133,7 +137,7 @@ body{
 }
 
 
-svg{
+.svg{
     display: none;
     color: #b6b6b6;
 }
@@ -187,7 +191,7 @@ svg{
 }
 
 
-svg{
+.svg{
     display: none;
 }
 
@@ -227,8 +231,14 @@ svg{
     align-items: flex-start;
 }
 
-svg{
+.svg{
     display: none;
+}
+
+.stickk{
+  position: absolute;
+  top: 5%;
+  left: -7%;
 }
 
 
