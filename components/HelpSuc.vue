@@ -7,11 +7,11 @@
 
       <div class="carousel">
         <div class="carousel-inner" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-          <!-- If screen is wider than mobile breakpoint, display 2 reviews per slide -->
           <div class="carousel-item" v-for="(item, index) in totalSlides" :key="index">
+            <!-- Display reviews based on reviewsPerSlide -->
             <div class="review" v-for="(review, reviewIndex) in reviews.slice((item - 1) * reviewsPerSlide, item * reviewsPerSlide)" :key="review.id">
               <div class="svgg-container">
-                <div class="svgg" stroke="currentColor" fill="" stroke-width="0" viewBox="0 0 16 16" height="18" width="18" v-for="(svg, svgIndex) in review.svgs" :key="svgIndex">
+                <div class="svgg" v-for="(svg, svgIndex) in review.svgs" :key="svgIndex">
                   <svg v-html="svg" height="1em" width="1em" class="flex"></svg>
                 </div>
               </div>
@@ -27,7 +27,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
@@ -46,31 +45,49 @@ export default {
     };
   },
    computed: {
+    // Calculate the total number of slides needed
     totalSlides() {
       return Math.ceil(this.reviews.length / this.reviewsPerSlide);
     }
   },
   mounted() {
-    // Handle the carousel sliding logic every 5 seconds
-    this.intervalId = setInterval(this.nextSlide, 5000);
-
-    // Handle window resizing for responsive reviewsPerSlide count
+    // Adjust reviews per slide dynamically on screen resize
     window.addEventListener('resize', this.updateReviewsPerSlide);
   },
   beforeDestroy() {
-    clearInterval(this.intervalId);
     window.removeEventListener('resize', this.updateReviewsPerSlide);
   },
   methods: {
-    nextSlide() {
-      this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-    },
+    // Update the number of reviews per slide based on screen size
     updateReviewsPerSlide() {
       this.reviewsPerSlide = window.innerWidth <= 468 ? 1 : 2;
     }
   }
 };
 </script>
+
+<style scoped>
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+}
+
+.review {
+  padding: 20px;
+}
+
+.review-text, .review-user {
+  margin-top: 10px;
+}
+</style>
 
 <style scoped>
 .hero__main__section{
@@ -152,6 +169,7 @@ export default {
 .hero__secion__des img {
   width: 650px;
   height: 400px;
+  border-radius: 7px;
 }
 
 .svgg svg {
@@ -167,20 +185,24 @@ export default {
     flex-direction: column;
 }
 .hero__main__section[data-v-48cbe765] {
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 .hero__secion__des {
     width: 100%;
 }
 
 .hero__main__section h2 {
-    font-size: 35px;
+    font-size: 1.7rem;
     font-family: "Instrument Sans", sans-serif;
     font-weight: 700;
-    line-height: 50px;
+    line-height: 45px;
     margin-top: 14px;
     color: #1f2122;
     width: 100%;
+}
+
+.hero__main__section h4{
+  font-size: 1.2rem;
 }
 
 }

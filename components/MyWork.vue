@@ -59,15 +59,14 @@
     display: flex;
     align-items: center;
     /* justify-content: center; */
+    gap: 2rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
-    padding: 0 5rem;
 }
 
 .about_images_section{
     display: flex;
     gap: 2rem;
-    margin-left: 2rem;
     /* justify-content: center; */
 }
 
@@ -138,22 +137,12 @@
 
 
 /* scond one */
-
+/* 
 .about__description__section{
     width: 40%;
     padding-left: 3rem;
 
-}
+} */
 
-.about__description__section h1{
-      font-family: "Instrument Sans", sans-serif;
-    font-size: 2.7rem;
-    color: rgb(39, 38, 38);
-    font-weight: 600;
-}
 
-.about__description__section p{
-    font-family: "Instrument Sans", sans-serif;
-    font-size: 16px
-}
 </style>

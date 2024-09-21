@@ -131,7 +131,7 @@
 
 .about__description__section{
     width: 40%;
-    padding-left: 3rem;
+    /* padding-left: 3rem; */
 
 }
 
@@ -145,5 +145,40 @@
 .about__description__section p{
     font-family: "Instrument Sans", sans-serif;
     font-size: 16px
+}
+
+
+
+@media (max-width: 468px){
+    .Main__about__us__Section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 0 2rem;
+}
+.about_images_section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* margin-left: 2rem; */
+    /* justify-content: center; */
+}
+
+.about__description__section {
+    width: 100%;
+    /* padding-left: 3rem; */
+}
+
+.about__description__section h1{
+      font-family: "Instrument Sans", sans-serif;
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    color: rgb(39, 38, 38);
+    font-weight: 600;
+}
+
 }
 </style>
