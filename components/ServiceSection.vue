@@ -160,7 +160,6 @@ export default {
     justify-content: center;
     border-radius: 50%;
     width: 50px;
-    z-index: 99;
     height: 50px;
     background-color: #fff
 }

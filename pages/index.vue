@@ -10,7 +10,7 @@
   <MyWork/>
   <HelpSuc/>
   <ContactUs/>
- <DragWhats/>
+ <!-- <DragWhats/> -->
  <ArrowPoint/>
  <FooterSec/>
   </div>
