@@ -14,7 +14,7 @@
 
             </textarea>
             <button class="py-3 px-8 w-max flex items-center justify-center gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500">Submit now 
-                <img src="./icons8-right-arrow-64.png" alt="" class="w-4">
+                <!-- <img src="./icons8-right-arrow-64.png" alt="" class="w-4"> -->
             </button>
         </form>
      </div>
