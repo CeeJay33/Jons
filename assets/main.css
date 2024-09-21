@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 
+html {
+  scroll-behavior: smooth;
+}
 
-
+body{
+  position: relative;
+}
 
 
 p{
@@ -15,6 +20,7 @@ p{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10rem;
   width: 100%;
 }
 

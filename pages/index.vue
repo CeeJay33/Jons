@@ -3,6 +3,15 @@
  <NavBar />
  <HeroSection/>
  <SliderSec/>
- <!-- <DragWhats/> -->
+ <AboutUs/>
+ <SubAbout/>
+ <ServiceSection/>
+ <MyWork/>
+  <MyWork/>
+  <HelpSuc/>
+  <ContactUs/>
+ <DragWhats/>
+ <ArrowPoint/>
+ <FooterSec/>
   </div>
 </template>
