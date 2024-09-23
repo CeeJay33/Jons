@@ -73,6 +73,7 @@ export default {
 .scroll-container {
   position: fixed;
   bottom: 30px;
+  z-index: 999;
   right: 30px;
   width: 50px;
   height: 50px;
@@ -131,6 +132,32 @@ export default {
 
 .scroll-container:hover {
   background-color: rgba(44, 44, 44, 0.9);
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
+
+@media (max-width: 500px) {
+  .scroll-container {
+    bottom: 10px; /* Position it closer to the bottom */
+    right: 50%; /* Center it horizontally */
+    transform: translateX(50%); /* Move it to the center */
+    width: 45px; /* Adjust size for mobile */
+    height: 45px;
+  }
+
+  .arrow {
+    top: 12px; /* Adjust arrow positioning */
+    left: 12px; /* Center the arrow inside the circle */
+  }
+
+  .progress-circle {
+    width: 45px; /* Adjust circle size */
+    height: 45px;
+  }
+
+  .circular-chart {
+    width: 45px;
+    height: 45px;
+  }
+}
+
 </style>

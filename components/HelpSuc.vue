@@ -1,17 +1,17 @@
 <template>
-  <div class="hero__main__section mt-20">
+  <div class="hero__main__section_">
     <div class="hero__secion__des">
       <span>💖 Real results from real clients</span>
       <h2>See how we've helped our clients succeed</h2>
       <h4>More than 1500+ agencies using JonsWorld</h4>
 
       <div class="carousel">
-        <div class="carousel-inner" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-          <div class="carousel-item" v-for="(item, index) in totalSlides" :key="index">
-            <!-- Display reviews based on reviewsPerSlide -->
-            <div class="review" v-for="(review, reviewIndex) in reviews.slice((item - 1) * reviewsPerSlide, item * reviewsPerSlide)" :key="review.id">
+        <div class="carousel-inner" :style="{ transform: `translateX(-${currentSlide * (100 / reviewsPerSlide)}%)`, transition: 'transform 0.5s ease-in-out' }">
+          <div class="carousel-item" v-for="(item, index) in totalSlides" :key="index" style="display: flex; justify-content: center;">
+            <!-- Adjust to show correct number of reviews per slide -->
+            <div class="review" v-for="(review, reviewIndex) in getReviewsForSlide(item)" :key="review.id" style="margin: 0 10px;">
               <div class="svgg-container">
-                <div class="svgg" v-for="(svg, svgIndex) in review.svgs" :key="svgIndex">
+                <div class="svgg" stroke="currentColor" fill="" stroke-width="0" viewBox="0 0 16 16" height="18" width="18" v-for="(svg, svgIndex) in review.svgs" :key="svgIndex">
                   <svg v-html="svg" height="1em" width="1em" class="flex"></svg>
                 </div>
               </div>
@@ -27,12 +27,13 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
     return {
       currentSlide: 0,
-       reviewsPerSlide: window.innerWidth <= 468 ? 1 : 2,
+      reviewsPerSlide: 2, // Default for server-side rendering, updated later on client-side
       intervalId: null,
       reviews: [
         { id: 1, user: 'George', text: 'I highly recommend Mizzle to anyone looking for a high-quality Bootstrap theme.', svgs: ['<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>', '<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>', '<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>', '<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>', '<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>'] },
@@ -44,25 +45,53 @@ export default {
       ],
     };
   },
-   computed: {
-    // Calculate the total number of slides needed
+      computed: {
     totalSlides() {
       return Math.ceil(this.reviews.length / this.reviewsPerSlide);
     }
   },
   mounted() {
-    // Adjust reviews per slide dynamically on screen resize
-    window.addEventListener('resize', this.updateReviewsPerSlide);
+    // Ensure this code runs only in the browser (client-side)
+    if (typeof window !== "undefined") {
+      this.reviewsPerSlide = window.innerWidth <= 468 ? 1 : 2;
+      window.addEventListener('resize', this.handleResize);
+      this.startAutoSlide();
+    }
   },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.updateReviewsPerSlide);
+  beforeUnmount() {
+    if (typeof window !== "undefined") {
+      window.removeEventListener('resize', this.handleResize);
+      this.stopAutoSlide();
+    }
   },
   methods: {
-    // Update the number of reviews per slide based on screen size
-    updateReviewsPerSlide() {
-      this.reviewsPerSlide = window.innerWidth <= 468 ? 1 : 2;
-    }
-  }
+    handleResize() {
+      if (typeof window !== "undefined") {
+        this.reviewsPerSlide = window.innerWidth <= 468 ? 1 : 2;
+      }
+    },
+    startAutoSlide() {
+      if (typeof window !== "undefined") {
+        this.intervalId = setInterval(() => {
+          this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        }, 5000); // Change slide every 5 seconds
+      }
+    },
+    stopAutoSlide() {
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+      }
+    },
+    getReviewsForSlide(slide) {
+      const start = slide * this.reviewsPerSlide;
+      return this.reviews.slice(start, start + this.reviewsPerSlide);
+    },
+  },
+  computed: {
+    totalSlides() {
+      return Math.ceil(this.reviews.length / this.reviewsPerSlide);
+    },
+  },
 };
 </script>
 
@@ -90,12 +119,13 @@ export default {
 </style>
 
 <style scoped>
-.hero__main__section{
-  padding: 0 5rem;
+.hero__main__section_{
+  padding: 5rem 5rem;
+  display: flex;
 }
 
 
-.hero__main__section h2{
+.hero__main__section_ h2{
   font-size: 45px;
   font-family: "Instrument Sans", sans-serif;
   font-weight: 700;
@@ -105,7 +135,7 @@ export default {
   width: 70%;
 }
 
-.hero__main__section h4{
+.hero__main__section_ h4{
   font-size: 20px;
   margin: 20px 0;
   color: #1f2122;
@@ -160,9 +190,6 @@ export default {
   font-family: "Instrument Sans", sans-serif;
 }
 
-.hero__main__section {
-  display: flex;
-}
 .hero__secion__des{
   width: 60%;
 }
@@ -180,18 +207,18 @@ export default {
 
 @media (max-width: 468px) {
 
-  .hero__main__section{
+  .hero__main__section_{
     display: flex;
     flex-direction: column;
 }
-.hero__main__section[data-v-48cbe765] {
+.hero__main__section_[data-v-48cbe765] {
     padding: 0 2rem;
 }
 .hero__secion__des {
     width: 100%;
 }
 
-.hero__main__section h2 {
+.hero__main__section_ h2 {
     font-size: 1.7rem;
     font-family: "Instrument Sans", sans-serif;
     font-weight: 700;
@@ -201,7 +228,7 @@ export default {
     width: 100%;
 }
 
-.hero__main__section h4{
+.hero__main__section_ h4{
   font-size: 1.2rem;
 }
 

@@ -1,16 +1,19 @@
 <template>
+   <SvgComp/>
   <div>
  <NavBar />
+ 
  <HeroSection/>
  <SliderSec/>
  <AboutUs/>
  <SubAbout/>
  <ServiceSection/>
  <MyWork/>
-  <MyWork/>
+  <MyWorkI/>
+  <MyWorkII/>
   <HelpSuc/>
   <ContactUs/>
- <!-- <DragWhats/> -->
+ <DragWhats/>
  <ArrowPoint/>
  <FooterSec/>
   </div>

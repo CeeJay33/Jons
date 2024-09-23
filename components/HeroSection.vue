@@ -6,12 +6,12 @@
       </div>
 
       <div class="hero__header__text mt-4">
-        <h2 class="sm:text-left">Creative studio focused on  <span ref="heroText" class="hero-text"></span></h2>
+        <h2 class="sm:text-left">Transform Your Brand With  <span ref="heroText" class="hero-text"></span></h2>
         <span ref="heroText" class="hero-text"></span>
       </div>
 
       <div class="description__secion">
-        <p>From concept to execution, we deliver web designs that make an impact. Let your brand shine with our innovative and visually stunning websites.</p>
+        <p>At St.jonsworld Communicates, we bring your brand vision to life with exceptional branding, cutting-edge printing, and custom packaging solutions that captivate your audience and set you apart from the competition</p>
       </div>
 
      <div class="relative w-full max-w-xl">
@@ -23,7 +23,7 @@
   <button
     class="absolute right-1 top-1 bottom-1 px-4 h-12 text-white bg-slate-900 rounded-md hover:bg-[#7509e1] focus:outline-none"
   >
-    Start trial
+    Get started
   </button>
 </div>
 
@@ -82,8 +82,8 @@ onMounted(async () => {
   const { TextPlugin } = await import('gsap/TextPlugin')
   gsap.registerPlugin(TextPlugin)
 
-  const firstText = 'Web Dev'
-  const secondText = 'Digital Designs'
+  const firstText = 'Stunning Designs'
+  const secondText = 'Quality Packaging'
 
   gsap.timeline({ repeat: -1 }) 
     .to(heroText.value, {
