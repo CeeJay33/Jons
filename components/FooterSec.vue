@@ -20,15 +20,15 @@
 
         <div class="col">
             <h4>About</h4>
-            <a><router-link to="/learnMore">About Us</router-link></a>
+            <a>About Us </a>
             <a href="#">Delivery information</a>
             <a href="#">Privacy</a>
             <a href="#">Terms & Condition</a>
-            <a ><router-link to="/contact-us">Contact Us</router-link></a>
+            <a >Contact Us </a>
         </div>
         <div class="col">
             <h4>My Account</h4>
-            <a><router-link to="/sign-in-customer">Sign In</router-link></a>
+            <a >Sign In </a>
             <a href="#">View cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track My Order</a>
