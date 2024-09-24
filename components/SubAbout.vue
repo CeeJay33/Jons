@@ -11,7 +11,7 @@
                 <h1 class="section-title font-bold">Our Mission</h1>
 
             <p class="section-text">
-               Our vision is to grow and emerge as a reputable global Marketing communication Company, that offers a world class and affordable marketing communication solutions to the small, medium and big companies and organizations.
+               Our mission is to consistently offer the highest level of creative and quality products and services to our clients through our highly experienced and efficient personals that deploys the best practices through the utilization of the best resources and technologies.
             </p>
             <span class="flex items-center font-semibold">Our Core Values: <span class="italic font-semibold px-3" >  Integrity, Quality, Excellence, Solution</span></span>
 

@@ -14,13 +14,17 @@
         <div class="__container">
           <h2>{{ service.title }}</h2>
           <p>{{ service.description }}</p>
-          <span class="quote flex gap-2 items-center pt-8 cursor-pointer"
-            >{{ service.check }}
+          <span 
+            class="quote flex gap-2 items-center pt-8 cursor-pointer"
+            @click="showDetails(index)" title="Click twice to show full details"
+          >
+            {{ service.check }}
             <img
               src="~/assets/images/icons8-right-arrow-64.png"
               class="w-6"
-              alt=""
-          /></span>
+              alt="Arrow icon"
+            />
+          </span>
         </div>
 
         <div class="circular__icon">
@@ -28,37 +32,139 @@
         </div>
       </div>
     </div>
+
+    <!-- Dynamic wide container that slides up on click -->
+    <div v-if="selectedService !== null" class="dynamic__content__container">
+  
+      <div class="dynamic__content">
+           <div class="hang z-50 h-10 sticky top-0 w-full"><button @click="hideDetails"><img class="w-6" src="~/assets/images/icons8-x-30.png" alt=""></button></div>
+        <h2>{{ services[selectedService].title }}</h2>
+      
+        <h4>{{ services[selectedService].subTitleI }}</h4>
+        <p>{{ services[selectedService].longDescription_1 }}</p>
+        <h4>{{ services[selectedService].subTitleII }}</h4>
+        <p>{{ services[selectedService].longDescription_2 }}</p>
+        <h4>{{ services[selectedService].subTitleIII }}</h4>
+        <p>{{ services[selectedService].longDescription_3 }}</p>
+        <h4>{{ services[selectedService].subTitleIV }}</h4>
+        <p>{{ services[selectedService].longDescription_4 }}</p>
+        <h4>{{ services[selectedService].subTitleV }}</h4>
+        <p>{{ services[selectedService].longDescription_5 }}</p>
+        <h4>{{ services[selectedService].subTitleVI }}</h4>
+        <p>{{ services[selectedService].longDescription_6 }}</p>
+        <h4>{{ services[selectedService].subTitleVII }}</h4>
+        <p>{{ services[selectedService].longDescription_7 }}</p>
+        <h4>{{ services[selectedService].subTitleVIII }}</h4>
+        <p>{{ services[selectedService].longDescription_8 }}</p>
+        <h4>{{ services[selectedService].subTitleIX }}</h4>
+        <p>{{ services[selectedService].longDescription_9 }}</p>
+        <h4>{{ services[selectedService].subTitleX }}</h4>
+        <p>{{ services[selectedService].longDescription_10 }}</p>
+        
+        
+      </div>
+    </div>
   </div>
 </template>
+
 
 <script>
 export default {
   data() {
     return {
+       selectedService: null,
       services: [
         {
-          title: "Digital Printing",
+          title: "Graphics Design",
+          subTitleI: "Art Direction",
+          subTitleII: "Layout & Composition",
+         longDescription_1: "Art direction involves managing and guiding the visual elements of a project .It ensures that the visual aspects align with the overall theme ,message ,and style ,setting the creative tone for all graphical content.",
+          longDescription_2: "Layout and composition refer to the arrangement of visual elements like text , images , and graphics to create a harmonious design .This includes structuring pages for balance ,readability ,and effective communication.",
           description:
             "Custom-designed business cards that leave a lasting impression. Available in various finishes",
           check: "Know more",
           svg: `<path d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.6.6 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.6.6 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.6.6 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535z"></path><path d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.6.6 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0z"></path>`,
         },
+
+
+
         {
-          title: "Art Direction",
+          title: "Digital Printing",
+          subTitleI: "Business Cards",
+          subTitleII: "Invitation Cards",
+          subTitleIII: "Access Cards",
+          subTitleIV: "Flyers(A6,A5,A3)",
+          subTitleV: "Posters(A3,A2,A1,A0)",
+          subTitleVI: "Thank You Cards",
+          subTitleVII: "Letterheads",
+          subTitleVIII: "Magazines",
+          subTitleIX: "Brochures",
+          subTitleX: "Books",
+          longDescription_1: "Custom-designed business cards that leave a lasting impression .Available in various finishes like matte , gloss ,or textured for a professional look.",
+          longDescription_2: "Personalized invitation cards for events such as weddings ,birthdays ,corporate events ,and more. Available in different paper textures and styles.",
+          longDescription_3: "Durable and functional access cards used for security purposes ,customized with branding elements and secure features.",
+          longDescription_4: "Creative flyers printed in high-quality digital formats ,perfect for promotions , advertisements ,and event announcements.",
+          longDescription_5: "Vibrant and eye-catching posters for advertising ,event promotions ,or educational purposes . Available in various sizes to meet your marketing needs.",
+          longDescription_6: "Professionally designed thank-you cards, personalized for any occasion ,offering an elegant way to express gratitude.",
+          longDescription_7: "Custom letter heads that add professionalism to your business communication , reinforcing your brand identity.",
+          longDescription_8: "Full-color magazine printing ,ideal for showcasing products ,services ,or creative content .Layout and designser vices included.",
+          longDescription_9: "Well-designed brochures that convey key messages about your brand or services .Available in various folds (bi-fold,tri-fold,etc.)and paper finishes.",
+          longDescription_10: "High-quality book printing for various types such as novels , textbooks , and corporate handbooks . Available in hard or soft covers.",
           description:
             "Art direction involves managing and guiding the visual elements of a project",
           check: "Know more",
           svg: `<path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434zM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567zM7.5 9.933l-2.75 1.571v3.134l2.75-1.571zm1 3.134 2.75 1.571v-3.134L8.5 9.933zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567zm2.242-2.433V3.504L8.5 5.076V8.21zM7.5 8.21V5.076L4.75 3.504v3.134zM5.258 2.643 8 4.21l2.742-1.567L8 1.076zM15 9.933l-2.75 1.571v3.134L15 13.067zM3.75 14.638v-3.134L1 9.933v3.134z"></path>`,
         },
+
+
+
+
         {
           title: "Large format Printing",
+          subTitleI: "Billboards",
+          subTitleII: "Banners",
+          subTitleIII: "Block Out / Backlit",
+          subTitleIV: "Vinyl Stickers",
+          subTitleV: "One-Way Graphics",
+          subTitleVI: "Highway Banners",
+          subTitleVII: "SAV Stickers",
+
+
+          longDescription_1: "Attention-grabbing billboards that create a large ,visible presence for your brand or advertisement ,strategically designed for maximum impact.",
+          longDescription_2: "Durable and weather-resistant banners , available in various sizes, perfect for out door advertising or event promotions.",
+          longDescription_3: "Block out and backlit banners for vibrant advertising both day and night, providing high visibility even in low-light conditions.",
+          longDescription_4: "Custom vinyl stickers used for promotional or branding purposes. They are durable ,waterproof ,and perfect for both indoor and outdoor use.",
+          longDescription_5: "One-way graphics allow for creative advertising on windows and glass surfaces ,providing privacy while still delivering vibrant messages.",
+          longDescription_6: "Large ,highly visible banners designed for road side advertising ,helping to promote your brand to passing traffic.",
+          longDescription_7: "Self-Adhesive Vinyl (SAV) stickers ideal for various surfaces ,offering long-lasting and high quality prints.",
           description:
             "Attention-grabbing billboards that create a large ,visible presence for your brand ",
           check: "Know more",
           svg: `<path d="M0 6a6 6 0 1 1 12 0A6 6 0 0 1 0 6"></path><path d="M12.93 5h1.57a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1.57a7 7 0 0 1-1-.22v1.79A1.5 1.5 0 0 0 5.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 4h-1.79q.145.486.22 1"></path>`,
         },
+
+
+
+
         {
           title: "Offset Printing",
+          subTitleI: "Posters",
+          subTitleII: "Posters",
+          subTitleIII: "Posters",
+          subTitleIV: "Posters",
+          subTitleV: "Posters",
+
+
+
+
+
+
+          longDescription_1: "High-volume,high-qualityoffsetprintingforpostersofallsizes,deliveringcrisp,vividcolorsformarketingorartisticpurposes.",
+          longDescription_2: "",
+          longDescription_2: "",
+          longDescription_4: "",
+          longDescription_5: "",
+          
           description:
             "High-volume offset printing for posters of all sizes, delivering crisp, vivid colors for marketing purpose",
           check: "Know more",
@@ -94,7 +200,25 @@ export default {
       ],
     };
   },
+methods: {
+  showDetails(index) {
+    this.selectedService = index;
+    const container = document.querySelector('.dynamic__content__container');
+    // container.classList.remove('hide');
+    container.classList.add('active');
+  },
+  hideDetails() {
+    const container = document.querySelector('.dynamic__content__container');
+    // container.classList.remove('active');
+    container.classList.add('hide');
+    setTimeout(() => {
+      this.selectedService = null;
+    }, 500); // Wait for the animation to complete
+  }
+}
 };
+
+
 </script>
 
 <style scoped>
@@ -130,7 +254,6 @@ export default {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  position: relative;
 }
 
 .services__container {
@@ -186,6 +309,107 @@ export default {
   background-color: #fff;
 }
 
+.dynamic__content__container {
+  /* Add styles to ensure the content container is visible and styled properly */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+   max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.dynamic__content__container.active {
+  max-height: 1000px; /* Adjust this based on the content height */
+}
+
+@keyframes slideUp {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 1000px;
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    max-height: 1000px;
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.dynamic__content__container.active {
+  animation: slideUp 1.5s ease forwards;
+}
+
+.dynamic__content__container.hide {
+  animation: slideDown 0.5s ease forwards;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;       
+}
+
+
+.dynamic__content {
+  background-color: #292a2d;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: scroll;
+  padding: 0 4rem;
+  height: 400px;
+  /* max-width: 600px; */
+  width: 50%;
+}
+
+.hang{
+  background-color: #292a2d;
+  text-align: right;
+}
+
+.hang button{
+ margin-top: 1rem;
+}
+
+.dynamic__content h2{
+  color: #168a29;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600;
+  font-size: 23px;
+  padding: 1rem 0;
+}
+
+.dynamic__content h4{
+   color: #ffffff;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600;
+  font-family: 11px;
+  padding: 0.1rem 0.5rem;
+  /* list-style: armenian; */
+}
+
+.dynamic__content p{
+  color: #bdbcbc;
+  font-family: "Instrument Sans", sans-serif;
+  /* font-weight: 600; */
+  /* width: 40%; */
+  font-size: 15px;
+  padding: 1rem 0;
+}
+
 @media (max-width: 500px) {
   .service__section h1 {
     font-size: 30px;
@@ -209,6 +433,17 @@ export default {
     height: 50px;
     background-color: #fff;
   }
+
+  .dynamic__content {
+    background-color: #292a2d;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-y: scroll;
+    padding: 0 2rem;
+    height: 400px;
+    /* max-width: 600px; */
+    width: 100%;
+}
 
   .__container {
     /* height: 400px; */

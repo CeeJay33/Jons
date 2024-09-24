@@ -1,13 +1,14 @@
 import {resolve} from "path";
 export default defineNuxtConfig({
   modules: ["@nuxtjs/google-fonts"],
+
   googleFonts: {
     families: {
-      "Instrument+Sans": [400, 500, 700], 
+      "Instrument+Sans": [400, 500, 700],
     },
-    display: "swap", 
-    prefetch: true, 
-    preload: true, 
+    display: "swap",
+    prefetch: true,
+    preload: true,
   },
 
   alias: {
@@ -21,6 +22,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+
+
 
   devtools: false,
 });
