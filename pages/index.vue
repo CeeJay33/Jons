@@ -11,7 +11,10 @@
  <MyWork/>
   <MyWorkI/>
   <MyWorkII/>
+   <MyWorkIII/>
+   <SeeMore/>
   <HelpSuc/>
+   <LocationPage/>
   <ContactUs/>
  <DragWhats/>
  <ArrowPoint/>

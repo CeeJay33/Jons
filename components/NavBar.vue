@@ -20,7 +20,9 @@
 
       <div class="flex items-center gap-4">
         <button>
-          <img src="~/assets/images/icons8-moon-50.png" class="w-6" alt="" />
+          <a href="#location">
+          <img src="~/assets/images/contact-map-pin-svgrepo-com.png" class="w-6" alt="" />
+          </a>
         </button>
         <a
           href="#contact"
@@ -41,7 +43,7 @@
       <transition name="fade">
         <ul
           v-if="isMenuOpen"
-          class="flex md:hidden flex-col gap-4 py-20 px-10 fixed top-0 left-0 w-full z-50 h-[50vh] bg-rose-50 transition duration-500"
+          class="flex md:hidden flex-col gap-4 py-20 px-10 fixed top-0 left-0 w-full z-50 h-[50vh] bg-white transition duration-500"
         >
           <div class="absolute right-6 top-6" @click="toggleMenu">
             <img
@@ -52,23 +54,23 @@
           </div>
           <li class="relative">
             <a href="#top" @click="closeMenu" class="text-sm">Home</a>
-            <div class="h-1 w-full bg-gray-300 mt-1"></div>
+            <div class="h-0.5 w-full bg-gray-100 mt-1"></div>
           </li>
           <li class="relative">
             <a href="#about" @click="closeMenu" class="text-sm">About Us</a>
-            <div class="h-1 w-full bg-gray-300 mt-1"></div>
+            <div class="h-0.5 w-full bg-gray-100 mt-1"></div>
           </li>
           <li class="relative">
             <a href="#Services" @click="closeMenu" class="text-sm">Services</a>
-            <div class="h-1 w-full bg-gray-300 mt-1"></div>
+            <div class="h-0.5 w-full bg-gray-100 mt-1"></div>
           </li>
           <li class="relative">
             <a href="#work" @click="closeMenu" class="text-sm">Our work</a>
-            <div class="h-1 w-full bg-gray-300 mt-1"></div>
+            <div class="h-0.5 w-full bg-gray-100 mt-1"></div>
           </li>
           <li class="relative">
             <a href="#contact" @click="closeMenu" class="text-sm">Contact Us</a>
-            <div class="h-1 w-full bg-gray-300 mt-1"></div>
+            <div class="h-0.5 w-full bg-gray-100 mt-1"></div>
           </li>
         </ul>
       </transition>

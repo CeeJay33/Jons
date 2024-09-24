@@ -149,49 +149,145 @@ export default {
         {
           title: "Offset Printing",
           subTitleI: "Posters",
-          subTitleII: "Posters",
-          subTitleIII: "Posters",
-          subTitleIV: "Posters",
-          subTitleV: "Posters",
+          subTitleII: "Receipt",
+          subTitleIII: "Books",
+          subTitleIV: "Calendars",
+          subTitleV: "Complimentary Slips",
 
 
 
 
 
 
-          longDescription_1: "High-volume,high-qualityoffsetprintingforpostersofallsizes,deliveringcrisp,vividcolorsformarketingorartisticpurposes.",
-          longDescription_2: "",
-          longDescription_2: "",
-          longDescription_4: "",
-          longDescription_5: "",
+          longDescription_1: "High-volume,high-quality offset printing for posters of all sizes, delivering crisp ,vivid colors for marketing or artistic purposes.",
+          longDescription_2: "Customized receipts for businesses , printed in bulk using offset printing for accuracy and professionalism.",
+          longDescription_3: "High-quality book printing using the off set method for sharp text and consistent color reproduction.",
+          longDescription_4: "Custom calendars for corporate branding or personal use ,available in different styles and sizes for a year-round promotional presence.",
+          longDescription_5: "Professionally printed complimentary slips , adding a personal touch to your business communications.",
           
           description:
             "High-volume offset printing for posters of all sizes, delivering crisp, vivid colors for marketing purpose",
           check: "Know more",
           svg: `<path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"></path><path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086z"></path>`,
         },
+
+
+
+
         {
           title: "Branding",
+           subTitleI: "Vehicle Branding",
+        subTitleII: "Office Branding",
+        subTitleIII: "Shop Branding",
+        subTitleIV: "Exhibition Branding",
+        subTitleV: "Product Display Stand",
+        subTitleVI: "Product Display Hangers",
+
+
+        longDescription_1: "Transform your vehicles into mobile advertisements with custom vehicle branding that romotes your business where ever you go.",
+        longDescription_2: "Enhance your office environment with branded decor , including wall graphics , signage ,and custom furnishings that reflect your corporate identity",
+        longDescription_3: "Create a visually appealing shop front that attracts customers and reinforces your brand through signage , window displays , and custom graphics.",
+        longDescription_4: "Stand out at exhibitions with creative and bold branding materials like banners ,stands ,and signage that highlight your products or services.",
+        longDescription_5: "Custom-designed product display stands that showcase your products in retail environments , attracting customer attention.",
+        longDescription_6: "Innovative product hangers for retail displays ,designed to increase visibility and improve presentation ins tores.",
           description: "Enhance your environment with branded decor, including wall grahpics, signage...",
           check: "Know more",
           svg: `<path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"></path>`,
         },
+
+
         {
           title: "Signage",
+          subTitleI: "3D Signs",
+          subTitleII: "Acrylic Signs",
+          subTitleIII: "Road Signs",
+          subTitleIV: "Sign Boards",
+          subTitleV: "Neon Signs",
+          subTitleVI: "LED Count down Timer",
+          subTitleVII: "Digital LED Sign",
+
+          longDescription_1: "Modern ,bold 3D signs that create a dynamic presence for your business. Available in various materials like acrylic , metal , and plastic.",
+          longDescription_2: "Elegant and durable acrylic signs perfect for offices , stores ,or events.These signs can be customized with logos or text.",
+          longDescription_3: "Regulatory and directional road signs designed with high-visibility materials for safety and compliance.",
+          longDescription_4: "Custom signboards for advertising , branding ,or directional purposes. Available in various sizes and materials for indoor and out door use",
+          longDescription_5: "Eye-catching neon signs that light up your brand or message , perfect for shops , restaurants ,or night life venues.",
+          longDescription_6: "Specialized LED countdown timers for events or promotional campaigns , adding a modern and digital touch.",
+          longDescription_7: "Vibrant ,programmable digital LED signs for dynamic advertising, ideal for store fronts or indoor promotions.",
           description:
             "Elegant and durable acrylic signs perfect for offices, stores, or events...",
           check: "Know more",
           svg: `<path d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5z"></path>`,
         },
+
+
         {
           title: "Packaging/Labelling",
+
+          subTitleI: "Product Bottle Labels",
+          subTitleII: "Product Packs",
+          subTitleIII: "Product Boxes",
+          subTitleIV: "Product Nylons",
+          subTitleV: "Product Display Hangers",
+
+
+          longDescription_1: "Custom-designed bottle labels that communicate your brand and product information effectively.",
+          longDescription_2: "Innovative product packaging that enhances your product’s visibility and appeal on store shelves.",
+          longDescription_3: "Custom-made product boxes for secure packaging and attractive presentation of your products.",
+          longDescription_4: "Durable ,branded product nylon bags for packaging that promotes your brand even after purchase.",
+          longDescription_5: "Creative and functional display hangers that increase the visibility and market ability of your products in retail stores.",
           description:
             "Building and maintaining websites and web applications.",
           check: "Know more",
            svg: `<path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"></path>`,
         },
+
+
+
+         {
+          title: "Digital Marketing",
+
+          subTitleI: "Online Adverts",
+          subTitleII: "Web Design & Development",
+          subTitleIII: "Website Maintenance",
+          subTitleIV: "Social Media Management",
+
+
+          longDescription_1: "Targeted online advertising campaigns designed to increase your brand’s visibility and generate leads across social media platforms and search engines.",
+          longDescription_2: "Custom websites that are user-friendly and visually appealing, designed to meet your business goals and provide an excellent user experience.",
+          longDescription_3: "Comprehensive website maintenance services ,ensuring that your site runs smoothly , stays secure, and remains up to date with the latest content.",
+          longDescription_4: "Effective social media strategies to manage your brand’s online presence , creating engaging content that fosters community interaction and brand growth.",
+          description:
+            "Building and maintaining websites and web applications.",
+          check: "Know more",
+           svg: `<path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"></path>`,
+        },
+
+
+
+
+      
         {
           title: "Promotional materials",
+          subTitleI: "Rollup Stands",
+          subTitleII: "X Stands",
+          subTitleIII: "Snap Frames",
+          subTitleIV: "Office Branding",
+          subTitleV: "Door Plates",
+          subTitleVI: "Tear Drops",
+          subTitleVII: "Diary Printing",
+          subTitleVIII: "Uniforms",
+          subTitleIX: "Flags",
+
+
+          longDescription_1: "Portable roll-up stands that provide an excellent promotional display solution for events , conferences , or in-store advertising.",
+          longDescription_2: "Affordable and easy-to-set-up X stands for banners ,perfect for promoting services or products at any event.",
+          longDescription_3: "Stylish and functional snap frames to display posters or notices ,allowing for easy updates of content.",
+          longDescription_4: "Tailored branding solutions for your office ,including customized signs, wall decals ,and branded office supplies.",
+          longDescription_5: "Professionally designed door plates that add a touch ofclass to office or room identification.",
+          longDescription_6: "Tear-drop banners for out door events, providing a unique and eye-catching advertising solution.",
+          longDescription_7: "Custom-printed diaries for corporate give aways or personal use,branded with your business logo and colors.",
+          longDescription_8: "High-quality uniforms tailored to your business needs, reinforcing your brand through professional employee apparel.",
+          longDescription_9: "Custom flags for events ,branding ,or promotions , available in various sizes and styles for both indoor and out door use.",
           description:
             "Portable roll-up stands that provide an excellent promotional display solution for events...",
           check: "Know more",

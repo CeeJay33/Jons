@@ -18,14 +18,13 @@
               <div class="image__logo">
                 <img :src="`/_nuxt/assets/${review.path}`" class="round w-5" alt="">
               </div>
-              <div class="review-user">{{ review.user }}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <div class="hero__secion__dess">
-      <img src="~/assets/images/photo_2024-09-21_08-00-56.jpg" alt="">
+      <img class="rounded-lg"src="~/assets/images/photo_2024-09-21_08-00-56.jpg" alt="">
     </div>
   </div>
 </template>

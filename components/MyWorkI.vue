@@ -25,7 +25,7 @@
 
         <div class="about_images_section">
             <div class="first_image_section">
-                <img src="~/assets/images/photo_2024-09-21_16-45-23.jpg" alt="">
+                <img src="~/assets/images/photo_2024-09-24_11-16-35.jpg" alt="">
             </div>
 
             <div class="second_image_section">
