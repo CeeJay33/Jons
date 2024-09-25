@@ -12,93 +12,53 @@
             <div class="content">
               <!-- Existing content repeated to ensure seamless scroll -->
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.38 (1).jpeg" alt="Fashion Design 1">
+                
               </div>
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.38 (2).jpeg" alt="Fashion Design 2">
+                
               </div>
               <!-- Add more items as needed -->
 
               <!-- Duplicate items for seamless scroll -->
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.40 (2).jpeg" alt="Fashion Design 1">
+                
               </div>
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.39.jpeg" alt="Fashion Design 2">
+                
               </div>
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.38 (3).jpeg" alt="Fashion Design 2">
+                
               </div>
               <!-- Add more items as needed -->
 
               <!-- Duplicate items for seamless scroll -->
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.39 (2).jpeg" alt="Fashion Design 1">
+                
               </div>
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.39 (3).jpeg" alt="Fashion Design 2">
+                
               </div>
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.39 (4).jpeg" alt="Fashion Design 2">
+                
               </div>
               <!-- Add more items as needed -->
 
               <!-- Duplicate items for seamless scroll -->
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-33-41.jpg" alt="Fashion Design 1">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.40 (1).jpeg" alt="Fashion Design 1">
+                
               </div>
               <div class="pro">
-                <img src="~/assets/images/photo_2024-09-19_11-44-20.jpg" alt="Fashion Design 2">
-                <div class="des">
-                  <span><i class="fa fa-eye"></i></span>
-                  <h5>Animation</h5>
-                  <h4>Fashion Designs</h4>
-                </div>
+                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.37 (3).jpeg" alt="Fashion Design 2">
+                
               </div>
               <!-- Repeat for enough content to cover and loop -->
             </div>
@@ -128,7 +88,7 @@ export default {
       const content = track.querySelector(".content");
       const trackWidth = track.clientWidth;
       const contentWidth = content.scrollWidth;
-      const duration = (contentWidth / trackWidth) * 10; // Adjust duration for smoother animation
+      const duration = (contentWidth / trackWidth) * 20; // Adjust duration for smoother animation
       content.style.animation = `marquee ${duration}s linear infinite`;
     },
     stopAnimation() {
@@ -142,7 +102,7 @@ export default {
 <style>
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-20%); }
+  100% { transform: translateX(-60%); }
 }
 
 .designers__section {
@@ -150,7 +110,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .content-wrapper {
@@ -261,6 +221,12 @@ export default {
   *{
   overflow-x: hidden;
 }
+
+@keyframes marquee {
+  0% { transform: translateX(45%); }
+  100% { transform: translateX(-1%); }
+}
+
  .left-section {
     padding-left: 1rem;
     width: 100%;

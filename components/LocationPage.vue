@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center" id="location">
+  <div class=" flex items-center justify-center mt-10 mb-10" id="location">
     <div class="w-full max-w-7xl p-6 bg-white rounded-lg ">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Contact Info -->
