@@ -37,7 +37,7 @@
     <div v-if="selectedService !== null" class="dynamic__content__container">
   
       <div class="dynamic__content">
-           <div class="hang z-50 h-10 sticky top-0 w-full"><button @click="hideDetails"><img class="w-6" src="~/assets/images/icons8-x-30.png" alt=""></button></div>
+           <div class="hang z-50 h-10 sticky top-0 w-full"><button @click="hideDetails"><img class="w-6" src="~/assets/images/output-onlinepnggtools.png" alt=""></button></div>
         <h2>{{ services[selectedService].title }}</h2>
       
         <h4>{{ services[selectedService].subTitleI }}</h4>
