@@ -3,7 +3,7 @@
     <div class="Main__about__us__Section scroll-mt-40" id="about">
         <div class="about_images_section">
             <div class="first_image_section">
-                <img src="~/assets/images/photo_2024-09-19_18-50-09.jpg" alt="">
+                <img src="~/assets/images/01-CYBeizB1.jpg" alt="">
             </div>
 
             <div class="second_image_section">
@@ -19,7 +19,7 @@
                     <p>customers</p>
                 </div>
                 </div>
-                <img src="~/assets/images/photo_2024-09-19_18-53-48.jpg" alt="">
+                <img src="~/assets/images/02-BuiKwSmM.jpg" alt="">
             </div>
         </div>
 
