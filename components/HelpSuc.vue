@@ -16,7 +16,7 @@
               </div>
               <!-- <div class="review-text">{{ review.text }}</div> -->
               <div class="image__logo">
-                <img :src="`/_nuxt/assets/${review.path}`" class="round w-5" alt="">
+                <img :src="`~/assets/${review.path}`" class="round w-5" alt="">
               </div>
             </div>
           </div>
