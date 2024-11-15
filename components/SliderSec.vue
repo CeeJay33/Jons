@@ -12,52 +12,52 @@
             <div class="content">
               <!-- Existing content repeated to ensure seamless scroll -->
               <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.38 (1).jpeg" alt="Fashion Design 1">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.38 (1).jpeg" alt="Fashion Design 1">
                 
               </div>
               <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.38 (2).jpeg" alt="Fashion Design 2">
-                
-              </div>
-              <!-- Add more items as needed -->
-
-              <!-- Duplicate items for seamless scroll -->
-              <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.40 (2).jpeg" alt="Fashion Design 1">
-                
-              </div>
-              <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.39.jpeg" alt="Fashion Design 2">
-                
-              </div>
-              <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.38 (3).jpeg" alt="Fashion Design 2">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.38 (2).jpeg" alt="Fashion Design 2">
                 
               </div>
               <!-- Add more items as needed -->
 
               <!-- Duplicate items for seamless scroll -->
               <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.39 (2).jpeg" alt="Fashion Design 1">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.40 (2).jpeg" alt="Fashion Design 1">
                 
               </div>
               <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.39 (3).jpeg" alt="Fashion Design 2">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.39.jpeg" alt="Fashion Design 2">
                 
               </div>
               <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.39 (4).jpeg" alt="Fashion Design 2">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.38 (3).jpeg" alt="Fashion Design 2">
                 
               </div>
               <!-- Add more items as needed -->
 
               <!-- Duplicate items for seamless scroll -->
               <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.40 (1).jpeg" alt="Fashion Design 1">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.39 (2).jpeg" alt="Fashion Design 1">
                 
               </div>
               <div class="pro">
-                <img src="~/assets/images/WhatsApp Image 2024-09-23 at 10.01.37 (3).jpeg" alt="Fashion Design 2">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.39 (3).jpeg" alt="Fashion Design 2">
+                
+              </div>
+              <div class="pro">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.39 (4).jpeg" alt="Fashion Design 2">
+                
+              </div>
+              <!-- Add more items as needed -->
+
+              <!-- Duplicate items for seamless scroll -->
+              <div class="pro">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.40 (1).jpeg" alt="Fashion Design 1">
+                
+              </div>
+              <div class="pro">
+                <img src="/images/WhatsApp Image 2024-09-23 at 10.01.37 (3).jpeg" alt="Fashion Design 2">
                 
               </div>
               <!-- Repeat for enough content to cover and loop -->

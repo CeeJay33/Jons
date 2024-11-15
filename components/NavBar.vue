@@ -4,7 +4,7 @@
       class="w-full fixed bg-white top-0 right-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50"
     >
       <img
-        src="~/assets/images/photo_2024-09-17_17-44-54.jpg"
+        src="/images/photo_2024-09-17_17-44-54.jpg"
         alt="logo"
         class="w-20 cursor-pointer mr-14"
       />
@@ -21,7 +21,7 @@
       <div class="flex items-center gap-4">
         <button>
           <a href="#location">
-          <img src="~/assets/images/contact-map-pin-svgrepo-com.png" class="w-6" alt="" />
+          <img src="/images/contact-map-pin-svgrepo-com.png" class="w-6" alt="" />
           </a>
         </button>
         <a
@@ -32,7 +32,7 @@
 
         <button class="block md:hidden ml-3" @click="toggleMenu">
           <img
-            src="~/assets/images/icons8-paragraph-64.png"
+            src="/images/icons8-paragraph-64.png"
             alt=""
             class="w-6"
           />
@@ -47,7 +47,7 @@
         >
           <div class="absolute right-6 top-6" @click="toggleMenu">
             <img
-              src="~/assets/images/icons8-x-30.png"
+              src="/images/icons8-x-30.png"
               class="w-6 cursor-pointer"
               alt=""
             />

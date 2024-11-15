@@ -2,7 +2,7 @@
     <div class="Main__about__us__Section scroll-mt-40" id="work">
         <div class="about_images_section ">
             <div class="first_image_section">
-                <img src="~/assets/images/photo_2024-09-24_11-01-09.jpg" alt="">
+                <img src="/images/photo_2024-09-24_11-01-09.jpg" alt="">
             </div>
 
             <div class="second_image_section">
@@ -18,14 +18,14 @@
                     <p>customers</p>
                 </div>
                 </div>
-                <img src="~/assets/images/photo_2024-09-24_10-56-01.jpg" alt="">
+                <img src="/images/photo_2024-09-24_10-56-01.jpg" alt="">
             </div>
         </div>
 
 
         <div class="about_images_section">
             <div class="first_image_section">
-                <img src="~/assets/images/photo_2024-09-24_11-14-16.jpg" alt="">
+                <img src="/images/photo_2024-09-24_11-14-16.jpg" alt="">
             </div>
 
             <div class="second_image_section">
@@ -41,7 +41,7 @@
                     <p>customers</p>
                 </div>
                 </div>
-                <img src="~/assets/images/photo_2024-09-24_11-13-35.jpg" alt="">
+                <img src="/images/photo_2024-09-24_11-13-35.jpg" alt="">
             </div>
             
         </div>

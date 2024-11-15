@@ -16,7 +16,7 @@
             <span class="flex items-center font-semibold">Our Core Values: <span class="italic font-semibold px-3" >  Integrity, Quality, Excellence, Solution</span></span>
 
         </div><div class="about-description-section">
-            <img src="~/assets/images/photo_2024-09-19_09-51-21.jpg" class="mt-1 rounded-lg" alt="">
+            <img src="/images/photo_2024-09-19_09-51-21.jpg" class="mt-1 rounded-lg" alt="">
         </div>
     </div>
 </template>
